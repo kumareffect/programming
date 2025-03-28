@@ -1,13 +1,17 @@
 let string = "";
 
-function squareShape(n) {    
-    for(let i=0; i<=n; i++){
-        for(let j=0; j<=n; j++) {
-            string += "* ";
+function hollowSquareShape(n) {
+    for(let i = 0; i<=n; i++) {
+        for(let j = 0; j<=n; j++) {
+            if (i === 0 || i === n || j === 0 || j === n) {
+            string += "*";
+          } else {
+            string += " ";
+          }
         }
-        string += "\n";
+        string += '\n';
     }
     console.log(string);
 }
 
-squareShape(6);
+hollowSquareShape(6);
