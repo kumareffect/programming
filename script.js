@@ -1,12 +1,13 @@
-function triangleShape(n) {
-    let string = "";
-    for(let i=0; i<=n; i++) {
-        for(let j=0; j<=i; j++) {
-            string += "*";
+let string = "";
+
+function squareShape(n) {    
+    for(let i=0; i<=n; i++){
+        for(let j=0; j<=n; j++) {
+            string += "* ";
         }
         string += "\n";
     }
     console.log(string);
 }
 
-triangleShape(6);
+squareShape(6);
