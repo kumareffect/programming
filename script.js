@@ -1,17 +1,17 @@
 let string = "";
 
-function hollowSquareShape(n) {
-    for(let i = 0; i<=n; i++) {
-        for(let j = 0; j<=n; j++) {
-            if (i === 0 || i === n || j === 0 || j === n) {
-            string += "*";
-          } else {
-            string += " ";
-          }
+function hollowCross(n) {
+    for(let i=0; i<=n; i++) {
+        for(let j=0; j<=n; j++) {
+            if(i===j  ||  j === n-i){
+                string += "*";
+            } else {
+                string+=" ";
+            }
         }
-        string += '\n';
+        string+="\n";
     }
     console.log(string);
 }
 
-hollowSquareShape(6);
+hollowCross(6);
