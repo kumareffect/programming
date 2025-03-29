@@ -1,22 +1,27 @@
-const arr = [1, 2, 3, 3, 4, 5, 6, 4, 3];
-const filteredArray = [];
+function checkArmStrong(num) {
+    let count = 0;
+    let singleDigitArray = [];
+    let sumValue = 0;
+    let duplicateNum = num;
 
-function removeDuplicate(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        let isDuplicate = false;
-        for (let j = i + 1; j < arr.length; j++) {
-            if (arr[i] === arr[j]) {
-                isDuplicate = true;
-                break; // Exit inner loop once duplicate is found
-            }
-        }
-        if (!isDuplicate) {
-            filteredArray.push(arr[i]); // Add only non-duplicates
-        }
+    // Count and Single Digit Separator
+    while(duplicateNum !== 0) {
+        count++;
+        singleDigitArray.push(duplicateNum % 10);
+        duplicateNum = Math.floor(duplicateNum / 10);
     }
-    for (let i = 0; i < filteredArray.length; i++) {
-        console.log(filteredArray[i]);
+
+    // Nested loop with Single Digit and How many times Count
+    for(i=0; i<singleDigitArray.length; i++) {
+        let multValue = 1;                // **Always keep in mind to reset
+        for(j=0; j<count; j++) {
+            multValue *= singleDigitArray[i];
+        }
+        sumValue += multValue;
     }
+
+    console.log(sumValue);
+
 }
 
-removeDuplicate(arr); // Pass arr as argument
+checkArmStrong(153);
