@@ -1,9 +1,19 @@
-function reverseString(a) {
-    let reverseWord = "";
-    for(let i = 1; i<=a.length; i++) {
-        reverseWord += a.charAt(a.length - i); 
-    }
-    console.log("Reverse Word = " + reverseWord);
- }
+function checkPrime(num) {
+    let isPrime = true;
 
-reverseString("rotator");
+    if(num < 2) isPrime = false;
+
+    for(let i = 2; i<Math.sqrt(num); i++) {
+        if(num % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    if(isPrime) {
+        console.log("Number is prime");
+    } else {
+        console.log("Not prime");
+    }
+}
+
+checkPrime(1)
