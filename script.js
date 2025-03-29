@@ -1,27 +1,30 @@
-function checkArmStrong(num) {
-    let count = 0;
+function checkStrong(num) {
     let singleDigitArray = [];
-    let sumValue = 0;
     let duplicateNum = num;
-
-    // Count and Single Digit Separator
+    let factoSumOfAll = 0
+    
+    // for taking out last digit
     while(duplicateNum !== 0) {
-        count++;
         singleDigitArray.push(duplicateNum % 10);
         duplicateNum = Math.floor(duplicateNum / 10);
     }
+    
+    // for one by one backdown;
+    for(let i = 0; i<singleDigitArray.length; i++) {
+        let factoStore = 1;
 
-    // Nested loop with Single Digit and How many times Count
-    for(i=0; i<singleDigitArray.length; i++) {
-        let multValue = 1;                // **Always keep in mind to reset
-        for(j=0; j<count; j++) {
-            multValue *= singleDigitArray[i];
+        while(singleDigitArray[i] !== 0) {
+           factoStore *= singleDigitArray[i]--;
         }
-        sumValue += multValue;
+        factoSumOfAll += factoStore;
     }
 
-    console.log(sumValue);
+    if(num === factoSumOfAll) {
+        console.log("It's a strong number")
+    } else {
+        console.log("It's not")
+    }
 
 }
 
-checkArmStrong(153);
+checkStrong(145);
