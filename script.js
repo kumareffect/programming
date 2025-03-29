@@ -1,10 +1,9 @@
-function swapString(a, b) {
-    a = a + b;
-    b = a.slice(0, b.length);    // 0 to b.length = World
-    a = a.slice(a.length - b.length); // Hello World - World = Hello
-    console.log(a);
-    console.log(b);
+function reverseString(a) {
+    let reverseWord = "";
+    for(let i = 1; i<=a.length; i++) {
+        reverseWord += a.charAt(a.length - i); 
+    }
+    console.log("Reverse Word = " + reverseWord);
+ }
 
-}
-
-swapString("Hello", "World");
+reverseString("rotator");
