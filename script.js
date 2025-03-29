@@ -1,17 +1,22 @@
-let string = "";
+const arr = [1, 2, 3, 3, 4, 5, 6, 4, 3];
+const filteredArray = [];
 
-function hollowCross(n) {
-    for(let i=0; i<=n; i++) {
-        for(let j=0; j<=n; j++) {
-            if(i===j  ||  j === n-i){
-                string += "*";
-            } else {
-                string+=" ";
+function removeDuplicate(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        let isDuplicate = false;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] === arr[j]) {
+                isDuplicate = true;
+                break; // Exit inner loop once duplicate is found
             }
         }
-        string+="\n";
+        if (!isDuplicate) {
+            filteredArray.push(arr[i]); // Add only non-duplicates
+        }
     }
-    console.log(string);
+    for (let i = 0; i < filteredArray.length; i++) {
+        console.log(filteredArray[i]);
+    }
 }
 
-hollowCross(6);
+removeDuplicate(arr); // Pass arr as argument
