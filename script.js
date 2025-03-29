@@ -1,11 +1,10 @@
-function reverseArray(arr) {
-    let reversedArr = [];
-    for(let i=arr.length-1; i>=0; i--) {
-        reversedArr.push(arr[i]);
-    }
-    for(revArr of reversedArr) {
-        console.log(revArr);
-    }
+function swapString(a, b) {
+    a = a + b;
+    b = a.slice(0, b.length);    // 0 to b.length = World
+    a = a.slice(a.length - b.length); // Hello World - World = Hello
+    console.log(a);
+    console.log(b);
+
 }
 
-reverseArray([1, 2, 3, 4, 5, 6, 7]);
+swapString("Hello", "World");
