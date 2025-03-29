@@ -8,6 +8,13 @@ n * facto(n-1)
 1 = 1 * 1 = 1     ← Base case
 
 Compute From base to top
+
+factorial(5)
+= 5 * factorial(4)       5 * 24 = 120
+= 5 * (4 * factorial(3))   4 * 6 = 24
+= 5 * (4 * (3 * factorial(2)))  3 * 2 = 6
+= 5 * (4 * (3 * (2 * factorial(1))))  2 * 1 = 2
+= 5 * (4 * (3 * (2 * 1)))  1 = 1 (base case)
 */
 
 function facto(n) {
